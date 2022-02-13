@@ -11,12 +11,12 @@ namespace BookMarket
         public static Dictionary<int, Book> Db = new Dictionary<int, Book>();
 
 
-        static void AddDb(Book item)
+        public static void AddDb(Book item)
         {
             Db.Add(item.Id, item);
         }
 
-        static void ShowAnbar()
+        public static void ShowAnbar()
         {
             foreach(var item in Db)
             {
@@ -25,16 +25,78 @@ namespace BookMarket
             }
         }
 
-        static void ChangName(Book book) // Each Field need his own change method
+        public static void ChangInfo(int id, string new_value,char choice) // Each Field need his own change method
         {
-           foreach(var item in Db)
+            switch (choice)
             {
-                if (item.Key == book.Id)
+                case 'n':
+                    foreach (KeyValuePair<int, Book> item in Db)
+                    {
+                        if (item.Key == id)
+                        {
+                            item.Value.Name = new_value;
+                            break;
+                        }
+                    }
+                    break;
+                case 'g':
+                    foreach (KeyValuePair<int, Book> item in Db)
+                    {
+                        if (item.Key == id)
+                        {
+                            item.Value.Genre = new_value;
+                            break;
+                        }
+                    }
+                    break;
+
+            }
+         
+        }
+
+       
+
+        public static void ChangeInfo(int id, int new_value,char choice) // Each Field need his own change method
+        {
+            switch (choice)
+            {
+                case 'p':
+                    foreach (KeyValuePair<int, Book> item in Db)
+                    {
+                        if (item.Key == id)
+                        {
+                            item.Value.PageSize = new_value;
+                            break;
+                        }
+                    }
+                    break;
+                case 's':
+                    foreach (KeyValuePair<int, Book> item in Db)
+                    {
+                        if (item.Key == id)
+                        {
+                            item.Value.InStock = new_value;
+                            break;
+                        }
+                    }
+                    break;
+            }
+           
+        }
+
+        public static void ChangeInfo(int id, double new_price) // Each Field need his own change method
+        {
+            foreach (KeyValuePair<int, Book> item in Db)
+            {
+                if (item.Key == id)
                 {
-                    
+                   item.Value.Price=new_price;
+                    break;
                 }
             }
         }
+
+      
 
 
 

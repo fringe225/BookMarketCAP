@@ -36,6 +36,7 @@ namespace BookMarket
                 _income += value;
             }
         }
+
     }
 
     

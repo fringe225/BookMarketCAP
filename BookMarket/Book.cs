@@ -19,6 +19,7 @@ namespace BookMarket
         {
             Id = id;
             Name = name;
+            Console.WriteLine("New Book Added to DB!");
         }
 
         public Book(int id,string name,int pageSize,double price,int inStock) : this(id, name)
@@ -31,6 +32,7 @@ namespace BookMarket
         public Book(int id,string name,int pageSize,double price, int inStock, string genre) : this(id, name, pageSize, price, inStock)
         {
             Genre = genre;
+            
         }
 
 
