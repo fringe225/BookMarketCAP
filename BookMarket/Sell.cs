@@ -44,7 +44,7 @@ namespace BookMarket
             {
                 if (item.Key == id)
                 {
-                    if (item.Value.InStock> count)
+                    if (item.Value.InStock>= count)
                     {
                         item.Value.InStock -= count;
                         Income = item.Value.Price * count;
