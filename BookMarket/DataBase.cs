@@ -25,7 +25,7 @@ namespace BookMarket
             }
         }
 
-        public static void ChangInfo(int id, string new_value,char choice) // Each Field need his own change method
+        public static void ChangeInfo(int id, string new_value,char choice) // Each Field need his own change method
         {
             switch (choice)
             {
@@ -34,8 +34,12 @@ namespace BookMarket
                     {
                         if (item.Key == id)
                         {
+                            Console.WriteLine($"{item.Value.Name} book has been changed to {new_value}");
+                            Console.ReadLine();
+
                             item.Value.Name = new_value;
                             break;
+                            
                         }
                     }
                     break;
@@ -44,6 +48,8 @@ namespace BookMarket
                     {
                         if (item.Key == id)
                         {
+                            Console.WriteLine($"{item.Value.Genre} book has been changed to {new_value}");
+                            Console.ReadLine();
                             item.Value.Genre = new_value;
                             break;
                         }
@@ -65,6 +71,8 @@ namespace BookMarket
                     {
                         if (item.Key == id)
                         {
+                            Console.WriteLine($"{item.Value.PageSize} book has been changed to {new_value}");
+                            Console.ReadLine();
                             item.Value.PageSize = new_value;
                             break;
                         }
@@ -75,6 +83,8 @@ namespace BookMarket
                     {
                         if (item.Key == id)
                         {
+                            Console.WriteLine($"{item.Value.InStock} book has been changed to {new_value}");
+                            Console.ReadLine();
                             item.Value.InStock = new_value;
                             break;
                         }
@@ -90,7 +100,9 @@ namespace BookMarket
             {
                 if (item.Key == id)
                 {
-                   item.Value.Price=new_price;
+                    Console.WriteLine($"{item.Value.Price} book has been changed to {new_price}");
+                    Console.ReadLine();
+                    item.Value.Price=new_price;
                     break;
                 }
             }
@@ -98,7 +110,12 @@ namespace BookMarket
 
       
 
-
+        public static void DeleteProduct(int id)
+        {
+            Db.Remove(id);
+            Console.WriteLine("Product Deleted!");
+            Console.ReadLine();
+        }
 
 
     }
