@@ -10,7 +10,7 @@ namespace BookMarket
     {
 
         public int Id;
-       
+        public int choice=0;
 
         public void MenuBar()
         {
@@ -24,8 +24,10 @@ namespace BookMarket
                 Console.WriteLine("5. Show Income.");  // By Get method if password true
                 Console.WriteLine("6. Show Anbar.");
                 Console.WriteLine("7. Exit");
-
-                int.TryParse(Console.ReadLine(), out int choice);
+                
+                int.TryParse(Console.ReadLine(), out choice);
+               
+                
 
                 if(choice == 7)
                 {
@@ -82,8 +84,10 @@ namespace BookMarket
                         DataBase.ShowAnbar();
                         Console.ReadLine();
                         break;
-                        
-                    case 7:
+
+                    default:
+                        Console.WriteLine("Duzgun secim edin !");
+                        int.TryParse(Console.ReadLine(), out choice);
                         break;
                        
                 }

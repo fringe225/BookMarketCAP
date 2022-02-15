@@ -20,8 +20,8 @@ namespace BookMarket
         {
             foreach(var item in Db)
             {
-                Console.Write($"Id.{item.Key}\nProduct Name: {item.Value.Name}\nProduct Price: {item.Value.Price}\n" +
-                    $"PageSize: {item.Value.PageSize}\nProduct size in Stock: {item.Value.InStock}\nBook Genre: {item.Value.Genre}\n");
+                Console.Write($"Id.{item.Key}\nProduct Name: {item.Value.Name??"Unknown"}\nProduct Price: {item.Value.Price}\n" +
+                    $"PageSize: {item.Value.PageSize}\nProduct size in Stock: {item.Value.InStock}\nBook Genre: {item.Value.Genre??"Unknown"}\n");
             }
         }
 

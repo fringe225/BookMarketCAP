@@ -66,7 +66,7 @@ namespace BookMarket
 
         public static void ShowIncome()
         {
-            Console.WriteLine(Income);
+            Console.WriteLine($"{Income} AZN");
         }
 
     }
